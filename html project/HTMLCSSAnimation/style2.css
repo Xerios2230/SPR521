@@ -1,0 +1,54 @@
+body {
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.flap-container {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.flap {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: purple;
+  transition: transform 2s;
+  z-index: 2;
+}
+
+.left {
+  left: 0;
+  transform-origin: left;
+}
+
+.right {
+  right: 0;
+  transform-origin: right;
+}
+
+.flap-container:hover .left {
+  transform: perspective(800px) rotateY(-60deg);
+}
+
+.flap-container:hover .right {
+  transform: perspective(800px) rotateY(60deg);
+}
+
+.flap-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
+}
