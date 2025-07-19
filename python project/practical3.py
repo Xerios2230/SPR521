@@ -10,7 +10,7 @@ def dobytokChusel():
         for i in range(start, finish - 1, -1):
             dob *= i
     else:
-        for i in range(start, finish + 1):
+        for i in range(start, finish + 1):    
             dob *= i
     print(f"Добуток діапазону = {dob}")
 
@@ -70,9 +70,18 @@ def shashlik(numbers):
     return result
 
 # 7
-def ananas(numbers = [1,53,36,547,357,7456,2465346,897]):
-    max_num = max(numbers)
-    fib = [0, 1]
-    while fib[-1] < max_num:
-        fib.append(fib[-1] + fib[-2])
-    return [x for x in numbers if x in fib]
+import math
+
+def is_fibonacci(n):
+    def is_perfect_square(x):
+        return int(math.isqrt(x)) ** 2 == x
+
+    return is_perfect_square(5 * n * n + 4) or is_perfect_square(5 * n * n - 4)
+
+def find_fibonacci_in_list(numbers):
+    result = []
+    for num in numbers:
+        if num >= 0 and is_fibonacci(num):
+            result.append(num)
+    return result
+    
