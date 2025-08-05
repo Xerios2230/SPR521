@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.table-container {
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+  margin-bottom: 50px;
+}
+
+table {
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background: #b3e0f2;
+  z-index: 2;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+tbody td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+thead th:first-child,
+tbody td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  background: #b3e0f2;
+  font-weight: bold;
+}
+
+tbody td:first-child {
+  background: #c7e7f3;
+}
+
+tbody tr:nth-child(even) td {
+  background-color: #f2f2f2;
+}
+
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 60px;
+  background-color: #444;
+  overflow: hidden;
+  transition: width 1s;
+  z-index: 1000;
+}
+
+nav:hover {
+  width: 200px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  padding: 20px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+nav li:first-child {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+nav li:not(:first-child) img {
+  width: 24px;
+  height: 24px;
+}
+
+nav li:hover {
+  background-color: #333;
+  cursor: pointer;
+}
+
+.side-content {
+  margin-left: 60px;
+  padding: 30px;
+  transition: margin-left 1s;
+}
+
+nav:hover ~ .side-content {
+  margin-left: 200px;
+}
+
+
+.pricing-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 50px;
+  flex-wrap: wrap;
+}
+
+.plan {
+  width: 200px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  transition: transform 1s;
+  display: inline-block;
+}
+
+.plan:hover {
+  transform: scale(1.1);
+}
+
+.plan h3 {
+  margin-top: 0;
+  padding-bottom: 10px;
+  border-bottom: 3px solid;
+}
+
+.enterprise h3 { border-color: #aa1c3a; }
+.professional h3 { border-color: #c78d2c; }
+.standart h3 { border-color: #205177; }
+.basic h3 { border-color: #4cc43e; }
+
+.plan h1 {
+  font-size: 36px;
+  margin: 10px 0 0 0;
+}
+
+.per-month {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.plan ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.plan ul li {
+  margin: 8px 0;
+  font-weight: bold;
+}
+
+.plan button {
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.enterprise button { background: #aa1c3a; }
+.professional button { background: #c78d2c; }
+.standart button { background: #205177; }
+.basic button { background: #4cc43e; }
